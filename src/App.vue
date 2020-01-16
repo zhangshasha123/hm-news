@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    app
+    <!-- 出口 -->
+    <router-view></router-view>
   </div>
 </template>
-<style lang="sass">
+<style lang="scss">
+
 </style>
