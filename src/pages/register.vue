@@ -42,7 +42,7 @@ export default {
     async register () {
       // if (!this.username || !this.password || !this.nickname) return
       console.log(111)
-      const res = await this.$axios.post('http://localhost:3000/register', this.form)
+      const res = await this.$axios.post('/register', this.form)
       // console.log(res)
       if (res.data.statusCode === 400) {
         this.$toast.fail('用户名已存在')
