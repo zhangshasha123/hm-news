@@ -4,7 +4,7 @@
     <div class="video" v-if="post.type===2">
        <p class="txt-cut">{{post.title}}</p>
       <div class="imgs">
-        <img :src="post.cover[0].url" alt="">
+        <img :src="$fixUrl(post.cover[0].url)" alt="">
         <span class="iconfont iconshipin"></span>
       </div>
       <div class="newspaper">
@@ -22,7 +22,7 @@
        </div>
        </div>
         <div class="photo">
-        <img :src="post.cover[0].url" alt="">
+        <img :src="$fixUrl(post.cover[0].url)" alt="">
        </div>
       </div>
 
@@ -30,7 +30,7 @@
       <div class="mutipul" v-else>
       <p class="txt-cut">{{post.title}}</p>
       <div class="imgs">
-        <img  v-for="item in post.cover" :key="item.id" :src="item.url" alt="">
+        <img  v-for="item in post.cover" :key="item.id" :src="$fixUrl(item.url)" alt="">
       </div>
       <div class="newspaper">
         <span>{{post.user.nickname}}</span>

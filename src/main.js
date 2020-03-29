@@ -24,6 +24,13 @@ Vue.prototype.$axios = axios
 // 给axios设置默认的baseURL (基准路径)  会自动拼接url参数
 axios.defaults.baseURL = 'http://localhost:3000'
 // axios.defaults.baseURL = 'http://192.168.0.105:3000'
+Vue.prototype.$fixUrl = function (url) {
+  if (url.startsWith('http')) {
+    return url
+  } else {
+    return axios.defaults.baseURL + url
+  }
+}
 
 // 添加响应拦截器
 axios.interceptors.response.use(function (response) {
